@@ -16,19 +16,52 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
       }
     </style>
 
     <div class="card">
-      <h1>Profile School</h1>
-    </div>
+        <img src="images/volvo-logotype.jpg" width="200px"/>
+        <div>
+            The Volvo Group (Swedish: Volvokoncernen; legally Aktiebolaget Volvo, shortened to AB Volvo) (stylized as VOLVO)
+            is a Swedish multinational manufacturing company headquartered in Gothenburg.
+        </div>
+
+        <h3>Suggested needs</h3>
+        <ul>
+            <template is="dom-repeat" items="{{suggestedNeeds}}">
+              <li>
+                  {{item.message}} - <b>Budget:</b> {{item.price}}
+              </li>
+            </template>
+        </ul>
+      </div>
   </template>
 
   <script>
     class ProfileSchool extends Polymer.Element {
       static get is() { return 'profile-school'; }
+
+      static get properties() {
+        return {
+          suggestedNeeds: {
+            type: Array,
+            value() {
+              return [
+                {
+                  message: "Books",
+                  price: "$50k",
+                },
+                {
+                  message: "VR Googles",
+                  price: "$150k",
+                },
+              ];
+            }
+          }
+        }
+      }
+
     }
 
     window.customElements.define(ProfileSchool.is, ProfileSchool);
