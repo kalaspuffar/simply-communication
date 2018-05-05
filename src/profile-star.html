@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="profile-star">
@@ -19,18 +20,55 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         padding: 10px;
       }
+      paper-card {
+        margin: 0 10px;
+      }
+
     </style>
 
     <div class="card">
-      <h1>Profile Star of life</h1>
+      <img src="images/star_for_life_logo.jpg" width="300px"/>
+      <div>
+          Dan Olofsson and his wife Christin talking to students at a Star for Life school
+          Star for Life (previously known as Star School1) is a Swedish non-profit school programme
+          that was created in Southern Africa to prevent HIV/AIDS from spreading.
+      </div>
+
+      <h3>Proposed events</h3>
+      <template is="dom-repeat" items="{{proposedEvents}}">
+          <paper-card image="{{item.image}}" alt="{{item.header}}">
+            <div class="card-content">
+                {{item.message}}
+            </div>
+          </paper-card>
+      </template>
     </div>
+
   </template>
 
   <script>
-    class MyView3 extends Polymer.Element {
+    class ProfileStar extends Polymer.Element {
       static get is() { return 'profile-star'; }
+
+      static get properties() {
+        return {
+          proposedEvents: {
+            type: Array,
+            value() {
+              return [
+                {
+                  header: "Boost your self-confidence!",
+                  image: "images/Wellness1.jpg",
+                  message: "Boost your self-confidence at Siphosabadletshe High School."
+                },
+              ];
+            }
+          }
+        }
+      }
+
     }
 
-    window.customElements.define(MyView3.is, MyView3);
+    window.customElements.define(ProfileStar.is, ProfileStar);
   </script>
 </dom-module>

@@ -20,8 +20,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 0px;
       }
 
+      img {
+        padding: 10px;
+      }
+
       paper-card {
-        margin: 0 20px;
+        margin: 0 10px;
       }
     </style>
 
@@ -29,25 +33,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <img src="images/volvo-logotype.jpg" width="200px"/>
       <div>
           The Volvo Group (Swedish: Volvokoncernen; legally Aktiebolaget Volvo, shortened to AB Volvo) (stylized as VOLVO)
-          is a Swedish multinational manufacturing company headquartered in Gothenburg. While its core activity is the
-          production, distribution and sale of trucks, buses and construction equipment, Volvo also supplies marine and
-          industrial drive systems and financial services. In 2016, it was the world’s second largest manufacturer of
-          heavy-duty trucks.
+          is a Swedish multinational manufacturing company headquartered in Gothenburg.
       </div>
 
       <h3>Sponsored events</h3>
-    </div>
-    <template is="dom-repeat" items="{{sponsoredEvents}}">
-        <paper-card image="{{item.image}}" alt="{{item.header}}">
-          <div class="card-content">
-              {{item.message}}
-          </div>
-          <div class="card-actions">
-            <paper-button>Share</paper-button>
-          </div>
-        </paper-card>
+      <template is="dom-repeat" items="{{sponsoredEvents}}">
+          <paper-card image="{{item.image}}" alt="{{item.header}}">
+            <div class="card-content">
+                {{item.message}}
+            </div>
+          </paper-card>
       </template>
-</template>
+    </div>
+  </template>
 
   <script>
     class ProfileCompany extends Polymer.Element {
