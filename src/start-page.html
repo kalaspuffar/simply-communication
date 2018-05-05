@@ -23,14 +23,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       paper-card {
-        --paper-card-header-color: #ddd;
         margin: 10px 0;
       }
 
     </style>
 
     <template is="dom-repeat" items="{{highlightedEvents}}">
-      <paper-card heading="{{item.header}}" image="{{item.image}}" alt="{{item.header}}">
+      <paper-card image="{{item.image}}" alt="{{item.header}}">
         <div class="card-content">
             {{item.message}}
         </div>
@@ -53,12 +52,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               return [
                 {
                   header: "Hackaton - Expect a better tomorrow",
-                  image: "images/hackathon.jpg",
+                  image: "images/expect_a_better_tomorrow.jpg",
                   message: "Sigma hosted a hackaton this weekend implementing solutions for a better tomorrow."
                 },
                 {
                   header: "Hackaton - Expect a better tomorrow",
-                  image: "images/hackathon.jpg",
+                  image: "images/wellness-2.jpg",
                   message: "Sigma hosted a hackaton this weekend implementing solutions for a better tomorrow."
                 },
               ];
