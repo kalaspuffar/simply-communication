@@ -8,6 +8,8 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
 
@@ -17,18 +19,65 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
 
-        padding: 10px;
+        padding: 0px;
       }
+
+      paper-card {
+        margin: 10px 0;
+      }
+
     </style>
 
     <div class="card">
       <h1>Upcoming Events</h1>
+
+      <template is="dom-repeat" items="{{upcomingEvents}}">
+        <paper-card image="{{item.image}}" alt="{{item.header}}">
+          <div class="card-content">
+              {{item.header}}
+          </div>
+          <div class="card-content">
+              {{item.message}}
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+          </div>
+        </paper-card>
+      </template>
     </div>
   </template>
 
   <script>
     class UpcomingEvents extends Polymer.Element {
       static get is() { return 'upcoming-events'; }
+
+      static get properties() {
+        return {
+          upcomingEvents: {
+            type: Array,
+            value() {
+              return [
+                {
+                  header: "Sigma - Expect a better tomorrow hackathon",
+                  image: "images/expect_a_better_tomorrow.jpg",
+                  message: "Sigma hosted a hackaton this weekend implementing solutions for a better tomorrow."
+                },
+                {
+                  header: "Volvo Pinetown Workshop",
+                  image: "images/VolvoPineTown3.jpg",
+                  message: "Learning valuable work skills with Volvo Cars."
+                },
+                {
+                  header: "Boost your self-confidence workshop",
+                  image: "images/Wellness1.jpg",
+                  message: "Learn to love yourself at Siphosabadletshe High School."
+                },
+              ];
+            }
+          }
+        }
+      }
+
     }
 
     window.customElements.define(UpcomingEvents.is, UpcomingEvents);
