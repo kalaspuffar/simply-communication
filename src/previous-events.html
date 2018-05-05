@@ -29,7 +29,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <div class="card">
-      <h1>Upcoming Events</h1>
+      <h1>Previous Events</h1>
 
       <template is="dom-repeat" items="{{previousEvents}}">
         <paper-card image="{{item.image}}" alt="{{item.header}}">
@@ -49,7 +49,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     class PreviousEvents extends Polymer.Element {
-      static get is() { return 'upcoming-events'; }
+      static get is() { return 'previous-events'; }
 
       static get properties() {
         return {
