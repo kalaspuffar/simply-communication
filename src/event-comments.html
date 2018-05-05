@@ -50,7 +50,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <template is="dom-repeat" items="{{messages}}">
-      <div class="card flex-row" style="background-color:{{item.bgColor}};">
+      <div class="card flex-row">
         <div class="icon">
           <img height="60px" width="60px" src="{{item.image}}" alt="{{item.user}}"/>
         </div>
@@ -73,32 +73,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             value() {
               return [
                 {
-                  image: "https://randomuser.me/api/portraits/women/83.jpg",
-                  user: "Johanna",
-                  bgColor: "#E1F5FE",
-                  address: "@VolvoCars",
-                  message: "First autonomus car on the public road!"
-                },
-                {
-                  image: "images/Thapelo.png",
-                  user: "Thapelo",
-                  bgColor: "#FFEBEE",
-                  address: "@Siphosabadletshe",
-                  message: "Great collaboration with Volvo on their Pinetown workshop."
-                },
-                {
-                  image: "images/Mbatha.png",
-                  user: "Mbatha",
-                  bgColor: "#FFEBEE",
-                  address: "@Qhakaza",
-                  message: "60% of our students passed their final exam, new record!!!"
-                },
-                {
-                  image: "https://randomuser.me/api/portraits/women/80.jpg",
+                  image: "https://randomuser.me/api/portraits/men/50.jpg",
                   user: "Zuma",
-                  bgColor: "#F9FBE7",
-                  address: "@StarForLife",
-                  message: "I love being able to communicate so easily with the sponsors!"
+                  message: "I had a great day and learnt so much <3!"
+                },
+                {
+                  image: "https://randomuser.me/api/portraits/women/51.jpg",
+                  user: "Luyanda",
+                  message: "So sad I missed this, I need some new dishes in my life."
+                },
+                {
+                  image: "https://randomuser.me/api/portraits/men/52.jpg",
+                  user: "Foreversun",
+                  message: "Thanks to everyone who came, it was a lot of fun!"
+                },
+                {
+                  image: "https://randomuser.me/api/portraits/men/53.jpg",
+                  user: "Herman",
+                  message: "When will you do another one of these?"
+                },
+                {
+                  image: "https://randomuser.me/api/portraits/men/54.jpg",
+                  user: "Dube",
+                  message: "The Malva pudding we cooked was off the charts!"
                 },
               ];
             }
