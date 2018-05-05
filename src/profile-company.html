@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="profile-company">
@@ -27,6 +28,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       paper-card {
         margin: 0 10px;
       }
+
+      paper-button {
+        margin: 10px 0;
+        background-color: #fff;
+      }
     </style>
 
     <div class="card" style="background-color: #E1F5FE;">
@@ -36,6 +42,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           is a Swedish multinational manufacturing company headquartered in Gothenburg.
       </div>
 
+      <paper-button raised>Export Previous events</paper-button>
       <h3>Sponsored events</h3>
       <template is="dom-repeat" items="{{sponsoredEvents}}">
           <paper-card image="{{item.image}}" alt="{{item.header}}">

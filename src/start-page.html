@@ -11,6 +11,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="start-page">
@@ -26,6 +28,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin: 10px 0;
       }
 
+      .big {
+        --iron-icon-height: 128px;
+        --iron-icon-width: 128px;
+      }
+
+      .navbar {
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #FFFFFF;
+      }
+
+      .nav {
+        margin: 10px;
+      }
     </style>
 
     <template is="dom-repeat" items="{{highlightedEvents}}">
@@ -41,6 +61,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </paper-card>
     </template>
+
+    <div class="navbar card">
+        <a href="/upcoming-events" tabindex="-1">
+          <paper-button class="nav" raised >
+            <iron-icon class="big" icon="announcement"></iron-icon>
+          </paper-button>
+        </a>
+        <a href="/profile-school" tabindex="-1">
+          <paper-button class="nav" raised>
+            <iron-icon class="big" icon="class"></iron-icon>
+          </paper-button>
+        </a>
+        <a href="/profile-company" tabindex="-1">
+          <paper-button class="nav" raised>
+            <iron-icon class="big" icon="cloud"></iron-icon>
+          </paper-button>
+        </a>
+        <a href="/profile-star" tabindex="-1">
+          <paper-button class="nav" raised>
+              <iron-icon class="big" icon="content-paste"></iron-icon>
+          </paper-button>
+        </a>
+        <a href="/message-flow" tabindex="-1">
+          <paper-button class="nav" raised>
+              <iron-icon class="big" icon="markunread"></iron-icon>
+          </paper-button>
+        </a>
+    </div>
   </template>
 
   <script>
