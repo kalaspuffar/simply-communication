@@ -47,7 +47,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       img {
         border-radius: 50%;
       }
+
+      .event-header {
+        padding:0;
+        margin:0;
+        padding-bottom: 10px;
+      }
+
+      .event-header img {
+        padding:0;
+        margin:0;
+        border-radius: 0;
+        width: 95vw;
+      }
+      .event-header span {
+        font-weight: bold;
+        font-size: 20px;
+        padding: 15px;
+      }
     </style>
+
+    <div class="event-header card">
+      <img src="images/Wellness1.jpg" />
+      <span>Boost your self-confidence workshop</span>
+    </div>
 
     <template is="dom-repeat" items="{{messages}}">
       <div class="card flex-row">
