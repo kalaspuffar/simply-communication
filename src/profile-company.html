@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="profile-company">
@@ -16,20 +17,59 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
+        padding: 0px;
+      }
 
-        padding: 10px;
+      paper-card {
+        margin: 0 20px;
       }
     </style>
 
     <div class="card">
-      <div class="circle">3</div>
-      <h1>Profile Company</h1>
+      <img src="images/volvo-logotype.jpg" width="200px"/>
+      <div>
+          The Volvo Group (Swedish: Volvokoncernen; legally Aktiebolaget Volvo, shortened to AB Volvo) (stylized as VOLVO)
+          is a Swedish multinational manufacturing company headquartered in Gothenburg. While its core activity is the
+          production, distribution and sale of trucks, buses and construction equipment, Volvo also supplies marine and
+          industrial drive systems and financial services. In 2016, it was the world’s second largest manufacturer of
+          heavy-duty trucks.
+      </div>
+
+      <h3>Sponsored events</h3>
     </div>
-  </template>
+    <template is="dom-repeat" items="{{sponsoredEvents}}">
+        <paper-card image="{{item.image}}" alt="{{item.header}}">
+          <div class="card-content">
+              {{item.message}}
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+          </div>
+        </paper-card>
+      </template>
+</template>
 
   <script>
     class ProfileCompany extends Polymer.Element {
       static get is() { return 'profile-company'; }
+
+      static get properties() {
+        return {
+          sponsoredEvents: {
+            type: Array,
+            value() {
+              return [
+                {
+                  header: "Volvo Pinetown Workshop",
+                  image: "images/VolvoPineTown3.jpg",
+                  message: "Learning valuable work skills with Volvo Cars."
+                },
+              ];
+            }
+          }
+        }
+      }
+
     }
 
     window.customElements.define(ProfileCompany.is, ProfileCompany);

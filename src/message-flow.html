@@ -37,16 +37,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-size: 20px;
         font-weight: bold;
       }
-    </style>
-      <div class="card">
-        <h1>Message Flow</h1>
-      </div>
 
+      img {
+        border-radius: 50%;
+      }
+    </style>
 
     <template is="dom-repeat" items="{{messages}}">
       <div class="card flex-row">
         <div class="icon">
-          <profile-icon size="60px" username="{{item.user}}" profileImage="https://randomuser.me/api/portraits/men/83.jpg"></profile-icon>
+          <img height="60px" width="60px" src="{{item.image}}" alt="{{item.user}}"/>
         </div>
         <div class="message">
           <span>{{item.user}}</span>
@@ -67,6 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             value() {
               return [
                 {
+                  image: "https://randomuser.me/api/portraits/women/83.jpg",
                   user: "Johanna @Volvo Cars",
                   message: "First autonomus car on the public road!"
                 },
@@ -75,6 +76,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   message: "Great collaboration with Volvo on their Pinetown workshop."
                 },
                 {
+                  image: "https://randomuser.me/api/portraits/men/83.jpg",
                   user: "Mbatha @Qhakaza High School",
                   message: "60% of our students passed their final exam, new record!!!"
                 },
