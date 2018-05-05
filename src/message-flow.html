@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/profile-icon/profile-icon.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="message-flow">
@@ -16,19 +17,68 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
       }
-    </style>
 
-    <div class="card">
-      <h1>Message Flow</h1>
-    </div>
+      .flex-row {
+        display:flex;
+        flex-direction: row;
+      }
+
+      .flex-row .icon {
+        flex: 1;
+      }
+      .flex-row .message {
+        flex: 11;
+        padding: 0 10px;
+      }
+      .message span {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+      <div class="card">
+        <h1>Message Flow</h1>
+      </div>
+
+
+    <template is="dom-repeat" items="{{messages}}">
+      <div class="card flex-row">
+        <div class="icon">
+          <profile-icon size="60px" username="{{item.user}}" profileImage="https://randomuser.me/api/portraits/men/83.jpg"></profile-icon>
+        </div>
+        <div class="message">
+          <span>{{item.user}}</span>
+          {{item.message}}
+        </div>
+      </div>
+    </template>
   </template>
 
   <script>
     class MessageFlow extends Polymer.Element {
       static get is() { return 'message-flow'; }
+
+      static get properties() {
+        return {
+          messages: {
+            type: Array,
+            value() {
+              return [
+                {
+                  user: "John Doe",
+                  message: "This is an interesting message"
+                },
+                {
+                  user: "Sally Doe",
+                  message: "This is an another message"
+                },
+              ];
+            }
+          }
+        }
+      }
     }
 
     window.customElements.define(MessageFlow.is, MessageFlow);
