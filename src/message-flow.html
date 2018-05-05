@@ -38,18 +38,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-weight: bold;
       }
 
+      .message span a {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
       img {
         border-radius: 50%;
       }
     </style>
 
     <template is="dom-repeat" items="{{messages}}">
-      <div class="card flex-row">
+      <div class="card flex-row" style="background-color:{{item.bgColor}};">
         <div class="icon">
           <img height="60px" width="60px" src="{{item.image}}" alt="{{item.user}}"/>
         </div>
         <div class="message">
-          <span>{{item.user}}</span>
+          <span>{{item.user}} <a href="#">{{item.address}}</a></span>
           {{item.message}}
         </div>
       </div>
@@ -68,22 +74,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               return [
                 {
                   image: "https://randomuser.me/api/portraits/women/83.jpg",
-                  user: "Johanna @VolvoCars",
+                  user: "Johanna",
+                  bgColor: "#E1F5FE",
+                  address: "@VolvoCars",
                   message: "First autonomus car on the public road!"
                 },
                 {
                   image: "images/Thapelo.png",
-                  user: "Thapelo @Siphosabadletshe High School",
+                  user: "Thapelo",
+                  bgColor: "#FFEBEE",
+                  address: "@Siphosabadletshe",
                   message: "Great collaboration with Volvo on their Pinetown workshop."
                 },
                 {
                   image: "images/Mbatha.png",
-                  user: "Mbatha @Qhakaza High School",
+                  user: "Mbatha",
+                  bgColor: "#FFEBEE",
+                  address: "@Qhakaza",
                   message: "60% of our students passed their final exam, new record!!!"
                 },
                 {
                   image: "https://randomuser.me/api/portraits/women/80.jpg",
-                  user: "Zuma @StarForLife",
+                  user: "Zuma",
+                  bgColor: "#F9FBE7",
+                  address: "@StarForLife",
                   message: "I love being able to communicate so easily with the sponsors!"
                 },
               ];
