@@ -44,7 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-weight: bold;
       }
 
-      img {
+      img.icon {
         border-radius: 50%;
       }
 
@@ -73,13 +73,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </div>
 
     <template is="dom-repeat" items="{{messages}}">
-      <div class="card flex-row">
-        <div class="icon">
-          <img height="60px" width="60px" src="{{item.image}}" alt="{{item.user}}"/>
-        </div>
-        <div class="message">
-          <span>{{item.user}} <a href="#">{{item.address}}</a></span>
-          {{item.message}}
+      <div class="card">
+        <template is="dom-if" if="{{item.messageImage}}">
+          <div style="justify-content:center; display:flex; margin-bottom: 15px;">
+              <img src="{{item.messageImage}}"/>
+          </div>
+        </template>
+        <div class="flex-row">
+          <div class="icon">
+            <img class="icon" height="60px" width="60px" src="{{item.image}}" alt="{{item.user}}"/>
+          </div>
+          <div class="message">
+            <span>{{item.user}} <a href="#">{{item.address}}</a></span>
+            {{item.message}}
+          </div>
         </div>
       </div>
     </template>
@@ -98,7 +105,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 {
                   image: "https://randomuser.me/api/portraits/men/50.jpg",
                   user: "Zuma",
-                  message: "I had a great day and learnt so much <3!"
+                  message: "I had a great day and learnt so much 💕!"
                 },
                 {
                   image: "https://randomuser.me/api/portraits/women/51.jpg",
@@ -108,6 +115,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 {
                   image: "https://randomuser.me/api/portraits/men/54.jpg",
                   user: "Dube",
+                  messageImage: "images/malvaPuddingGif.gif",
                   message: "The Malva pudding we cooked was off the charts!"
                 },
                 {
