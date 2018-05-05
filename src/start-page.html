@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="start-page">
@@ -19,18 +21,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         padding: 10px;
       }
+
+      paper-card {
+        --paper-card-header-color: #ddd;
+        margin: 10px 0;
+      }
+
     </style>
 
-    <div class="card">
-      <h1>Start page</h1>
-    </div>
+    <template is="dom-repeat" items="{{highlightedEvents}}">
+      <paper-card heading="{{item.header}}" image="{{item.image}}" alt="{{item.header}}">
+        <div class="card-content">
+            {{item.message}}
+        </div>
+        <div class="card-actions">
+          <paper-button>Share</paper-button>
+        </div>
+      </paper-card>
+    </template>
   </template>
 
   <script>
     class StartPage extends Polymer.Element {
       static get is() { return 'start-page'; }
+
+      static get properties() {
+        return {
+          highlightedEvents: {
+            type: Array,
+            value() {
+              return [
+                {
+                  header: "Hackaton - Expect a better tomorrow",
+                  image: "images/hackathon.jpg",
+                  message: "Sigma hosted a hackaton this weekend implementing solutions for a better tomorrow."
+                },
+                {
+                  header: "Hackaton - Expect a better tomorrow",
+                  image: "images/hackathon.jpg",
+                  message: "Sigma hosted a hackaton this weekend implementing solutions for a better tomorrow."
+                },
+              ];
+            }
+          }
+        }
+      }
+
     }
 
-    window.customElements.define(StartPage.is, StagePage);
+    window.customElements.define(StartPage.is, StartPage);
   </script>
 </dom-module>
