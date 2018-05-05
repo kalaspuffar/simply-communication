@@ -1,0 +1,112 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/profile-icon/profile-icon.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="event-comments">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+
+      .flex-row {
+        display:flex;
+        flex-direction: row;
+      }
+
+      .flex-row .icon {
+        flex: 1;
+      }
+      .flex-row .message {
+        flex: 11;
+        padding: 0 10px;
+      }
+      .message span {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .message span a {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      img {
+        border-radius: 50%;
+      }
+    </style>
+
+    <template is="dom-repeat" items="{{messages}}">
+      <div class="card flex-row" style="background-color:{{item.bgColor}};">
+        <div class="icon">
+          <img height="60px" width="60px" src="{{item.image}}" alt="{{item.user}}"/>
+        </div>
+        <div class="message">
+          <span>{{item.user}} <a href="#">{{item.address}}</a></span>
+          {{item.message}}
+        </div>
+      </div>
+    </template>
+  </template>
+
+  <script>
+    class EventComments extends Polymer.Element {
+      static get is() { return 'event-comments'; }
+
+      static get properties() {
+        return {
+          messages: {
+            type: Array,
+            value() {
+              return [
+                {
+                  image: "https://randomuser.me/api/portraits/women/83.jpg",
+                  user: "Johanna",
+                  bgColor: "#E1F5FE",
+                  address: "@VolvoCars",
+                  message: "First autonomus car on the public road!"
+                },
+                {
+                  image: "images/Thapelo.png",
+                  user: "Thapelo",
+                  bgColor: "#FFEBEE",
+                  address: "@Siphosabadletshe",
+                  message: "Great collaboration with Volvo on their Pinetown workshop."
+                },
+                {
+                  image: "images/Mbatha.png",
+                  user: "Mbatha",
+                  bgColor: "#FFEBEE",
+                  address: "@Qhakaza",
+                  message: "60% of our students passed their final exam, new record!!!"
+                },
+                {
+                  image: "https://randomuser.me/api/portraits/women/80.jpg",
+                  user: "Zuma",
+                  bgColor: "#F9FBE7",
+                  address: "@StarForLife",
+                  message: "I love being able to communicate so easily with the sponsors!"
+                },
+              ];
+            }
+          }
+        }
+      }
+    }
+
+    window.customElements.define(EventComments.is, EventComments);
+  </script>
+</dom-module>
