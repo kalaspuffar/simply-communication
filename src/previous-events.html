@@ -26,6 +26,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin: 10px 0;
       }
 
+      a {
+        text-decoration: none;
+      }
     </style>
 
     <div class="card">
@@ -40,7 +43,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               {{item.message}}
           </div>
           <div class="card-actions">
-            <paper-button>Share</paper-button>
+            <a href="/event-comments" tabindex="-1">
+              <paper-button>Feedback</paper-button>
+            </a>
+            <paper-button>Extract</paper-button>
           </div>
         </paper-card>
       </template>
