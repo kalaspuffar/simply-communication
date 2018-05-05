@@ -8,8 +8,9 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../bower_components/profile-icon/profile-icon.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="previous-events">
@@ -17,94 +18,61 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-        padding: 10px;
+
+        padding: 0px;
       }
 
-      .flex-row {
-        display:flex;
-        flex-direction: row;
+      paper-card {
+        margin: 10px 0;
       }
 
-      .flex-row .icon {
-        flex: 1;
-      }
-      .flex-row .message {
-        flex: 11;
-        padding: 0 10px;
-      }
-      .message span {
-        display: block;
-        font-size: 20px;
-        font-weight: bold;
-      }
-
-      .message span a {
-        display: block;
-        font-size: 14px;
-        font-weight: bold;
-      }
-
-      img {
-        border-radius: 50%;
-      }
     </style>
 
-    <template is="dom-repeat" items="{{messages}}">
-      <div class="card flex-row" style="background-color:{{item.bgColor}};">
-        <div class="icon">
-          <img height="60px" width="60px" src="{{item.image}}" alt="{{item.user}}"/>
-        </div>
-        <div class="message">
-          <span>{{item.user}} <a href="#">{{item.address}}</a></span>
-          {{item.message}}
-        </div>
-      </div>
-    </template>
+    <div class="card">
+      <h1>Upcoming Events</h1>
+
+      <template is="dom-repeat" items="{{previousEvents}}">
+        <paper-card image="{{item.image}}" alt="{{item.header}}">
+          <div class="card-content">
+              {{item.header}}
+          </div>
+          <div class="card-content">
+              {{item.message}}
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+          </div>
+        </paper-card>
+      </template>
+    </div>
   </template>
 
   <script>
     class PreviousEvents extends Polymer.Element {
-      static get is() { return 'previous-events'; }
+      static get is() { return 'upcoming-events'; }
 
       static get properties() {
         return {
-          messages: {
+          previousEvents: {
             type: Array,
             value() {
               return [
                 {
-                  image: "https://randomuser.me/api/portraits/women/83.jpg",
-                  user: "Johanna",
-                  bgColor: "#E1F5FE",
-                  address: "@VolvoCars",
-                  message: "First autonomus car on the public road!"
+                  header: "Food evening",
+                  image: "images/food.jpg",
+                  message: "Learn how to cook healthy foods at Imanuel Shifidi."
                 },
                 {
-                  image: "images/Thapelo.png",
-                  user: "Thapelo",
-                  bgColor: "#FFEBEE",
-                  address: "@Siphosabadletshe",
-                  message: "Great collaboration with Volvo on their Pinetown workshop."
-                },
-                {
-                  image: "images/Mbatha.png",
-                  user: "Mbatha",
-                  bgColor: "#FFEBEE",
-                  address: "@Qhakaza",
-                  message: "60% of our students passed their final exam, new record!!!"
-                },
-                {
-                  image: "https://randomuser.me/api/portraits/women/80.jpg",
-                  user: "Zuma",
-                  bgColor: "#F9FBE7",
-                  address: "@StarForLife",
-                  message: "I love being able to communicate so easily with the sponsors!"
+                  header: "Football tournament",
+                  image: "images/football.jpg",
+                  message: "Bring your team and play for the cup!"
                 },
               ];
             }
           }
         }
       }
+
     }
 
     window.customElements.define(PreviousEvents.is, PreviousEvents);
