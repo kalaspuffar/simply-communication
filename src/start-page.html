@@ -31,7 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template is="dom-repeat" items="{{highlightedEvents}}">
       <paper-card image="{{item.image}}" alt="{{item.header}}">
         <div class="card-content">
-            {{item.message}}
+            {{item.header}}
         </div>
         <div class="card-content">
             {{item.message}}
@@ -54,7 +54,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             value() {
               return [
                 {
-                  header: "Hackaton - Expect a better tomorrow",
+                  header: "Sigma - Expect a better tomorrow hackathon",
                   image: "images/expect_a_better_tomorrow.jpg",
                   message: "Sigma hosted a hackaton this weekend implementing solutions for a better tomorrow."
                 },
@@ -64,9 +64,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   message: "Learning valuable work skills with Volvo Cars."
                 },
                 {
-                  header: "Boost your self-confidence!",
+                  header: "Boost your self-confidence workshop",
                   image: "images/Wellness1.jpg",
-                  message: "Boost your self-confidence at Siphosabadletshe High School."
+                  message: "Learn to love yourself at Siphosabadletshe High School."
                 },
               ];
             }
