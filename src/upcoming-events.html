@@ -25,11 +25,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       paper-card {
         margin: 10px 0;
       }
-
+      a {
+        text-decoration: none;
+      }
     </style>
 
     <div class="card" style="background-color: #F3E5F5;">
       <h1>Upcoming Events</h1>
+      <a href="/">
+        <paper-button raised>Back</paper-button>
+      </a>
 
       <template is="dom-repeat" items="{{upcomingEvents}}">
         <paper-card image="{{item.image}}" alt="{{item.header}}">

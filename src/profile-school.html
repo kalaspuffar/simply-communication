@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="profile-school">
@@ -18,6 +19,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 10px;
       }
+      a {
+        text-decoration: none;
+      }
+
     </style>
 
       <div class="card" style="background-color: #FFEBEE;">
@@ -27,7 +32,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             are orphans or come from poor backgrounds. The school focuses on providing nutritional food
             to the children and have a dedicated team of teachers.
         </div>
-
+        <a href="/">
+          <paper-button raised>Back</paper-button>
+        </a>
+b
         <h3>Suggested needs</h3>
         <ul>
             <template is="dom-repeat" items="{{suggestedNeeds}}">

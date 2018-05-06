@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/profile-icon/profile-icon.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="event-comments">
@@ -65,12 +66,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-size: 20px;
         padding: 15px;
       }
+
+      a {
+        text-decoration: none;
+      }
     </style>
 
     <div class="event-header card">
       <img src="images/food.jpg" />
       <span>Food night</span>
-    </div>
+      <a href="/">
+        <paper-button raised>Back</paper-button>
+      </a>
+  </div>
 
     <template is="dom-repeat" items="{{messages}}">
       <div class="card">

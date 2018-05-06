@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="profile-star">
@@ -23,15 +24,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       paper-card {
         margin: 0 10px;
       }
+      a {
+        text-decoration: none;
+      }
 
     </style>
 
     <div class="card" style="background-color: #F9FBE7;">
       <img src="images/star_for_life_logo.jpg" width="300px"/>
       <div>
-          Star for Life is a Swedish non-profit school programmethat was created 
+          Star for Life is a Swedish non-profit school programmethat was created
           in Southern Africa to prevent HIV/AIDS from spreading.
       </div>
+      <a href="/">
+        <paper-button raised>Back</paper-button>
+      </a>
 
       <h3>Proposed events</h3>
       <template is="dom-repeat" items="{{proposedEvents}}">
@@ -42,7 +49,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </paper-card>
       </template>
     </div>
-
   </template>
 
   <script>

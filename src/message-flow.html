@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/profile-icon/profile-icon.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="message-flow">
@@ -47,7 +48,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       img {
         border-radius: 50%;
       }
+      a {
+        text-decoration: none;
+      }
     </style>
+    <a href="/">
+      <paper-button raised>Back</paper-button>
+    </a>
 
     <template is="dom-repeat" items="{{messages}}">
       <div class="card flex-row" style="background-color:{{item.bgColor}};">
