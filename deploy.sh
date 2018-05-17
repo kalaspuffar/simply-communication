@@ -7,4 +7,4 @@ if [ "${TRAVIS_TEST_RESULT}" = "1" ]; then
   exit
 fi
 
-ncftpput -R -v -u "${GOOGIEHOST_USER}" -p "${GOOGIEHOST_PASS}" $GOOGIEHOST_HOST public_html build/es5-bundled
+ncftpput -R -v -u "${GOOGIEHOST_USER}" -p "${GOOGIEHOST_PASS}" $GOOGIEHOST_HOST /public_html ./build/es5-bundled
