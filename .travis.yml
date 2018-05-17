@@ -1,0 +1,18 @@
+language: node_js
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y ftp-update
+
+install:
+  - npm install
+
+script:
+#  - npm run lint
+#  - npm run lint:javascript
+#  - npm run test
+  - npm run build
+  
+after_success:
+  - ./deploy.sh
+  - npm run lh --score=96 $GOOGIEHOST_HOST
