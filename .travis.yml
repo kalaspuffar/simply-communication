@@ -7,10 +7,11 @@ node_js:
 install:
   - npm install
 
-script:
+script:  
 #  - npm run lint
 #  - npm run lint:javascript
 #  - npm run test
+  - npm run bower_install
   - npm run build
   
 after_success:
