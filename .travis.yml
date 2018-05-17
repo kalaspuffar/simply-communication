@@ -5,6 +5,8 @@ node_js:
   - "node"
 
 install:
+  - apt-get update
+  - apt-get install -y ftp-upload
   - npm install
 
 script:  
