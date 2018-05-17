@@ -15,4 +15,4 @@ if [ "${TRAVIS_TEST_RESULT}" = "1" ]; then
   exit
 fi
 
-ftp-upload -h ${GOOGIE_HOST} -u ${GOOGIE_PASS} -d public_html -b -v build/es5-bundled/*
+ftp-upload -h $GOOGIEHOST_HOST -u $GOOGIEHOST_USER --password $GOOGIEHOST_PASS -d public_html -b -v build/es5-bundled/*
