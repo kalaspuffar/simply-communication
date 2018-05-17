@@ -20,4 +20,4 @@ script:
   
 after_success:
   - ./deploy.sh
-  - npm run lh --score=96 $GOOGIEHOST_HOST
+  - npm run lh $GOOGIEHOST_HOST

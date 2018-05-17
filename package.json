@@ -15,6 +15,6 @@
     "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
     "test": "polymer test",
     "build": "polymer build",
-    "lh": "lighthouse-ci"
+    "lh": "lighthouse-ci --score=96 --runner=wpt"
   }
 }
