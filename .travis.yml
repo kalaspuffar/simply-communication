@@ -9,7 +9,6 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
-      - ftp-update
 
 install:
   - npm install
