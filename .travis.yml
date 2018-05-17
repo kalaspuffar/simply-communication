@@ -4,9 +4,13 @@ language: node_js
 node_js:
   - "node"
 
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y ftp-upload
+
 install:
   - apt-get update
-  - apt-get install -y ftp-upload
+  - apt-get install -y 
   - npm install
 
 script:  
