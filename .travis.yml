@@ -16,8 +16,9 @@ script:
   - npm run lint
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - npm run test
+  - xvfb-run npm run test
   - npm run build
+
 
 after_success:
   - ./deploy.sh
