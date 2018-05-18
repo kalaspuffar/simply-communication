@@ -2,26 +2,27 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "9"
+- '9'
 addons:
   chrome: stable
 
+env:
+  global:
+  - secure: l1NWeMqDYkrWmxN5Gla0tKwrhDNzL+GnfJRezN//A+sTTVfLbdOj4s8U1rX5mnnR/0Kx1JssuTymA0aO5fyZ+YQ17Jh87TYDDkM1kLHssJBNZ1Yn6jXL7t3jpPPGUiBpeWrojnB1SMkFk3OG31Bhwzo0hymF9QQii9J6EcJR6C1sw2hCjtIamIkUJsKh396cRKav9ay/4xzWmucYt6HL2GUJSr6s1bhswCrandOviSYArCyhWp5vAWirgXcWYxtj/D0R09n5bZJHVrr44PXcRuxGM6XiBZP48zVvqG47F9r2Lw6S/nbFLEvcC4RMOc3b/ehFs614VVA4GB609OnrSrd8bp2UBA7OzR8NC3q+ZM/sQcqIFOOvRm/e2R4rJ4yoFil4QdCrSpuYOWHkBMdiCCxCw+tmS6/h1X5B7UuYvRtZU42djS1x6AMLCGoy2kEsJwk9kK0hK9LRUCRMImmgAfd71cH3ZF6rNox62y9GaKMyv2eio5C8yr6UxP45G4qc+izH/jlKcC78UROA9c93gAKcpnBRM59Q76Kp2uID50alswl9Q9gcNToQlDDj/uVq+zuyTUx87UoUdLNlNxEYiK5fDYmq0Gm8sYbgt822Ha0+/0EJdmo10mToJDLSEXg75K5kuCM8Y+dHVS7i0cEX1RtfvbPnF7qpaFTW5zHRKLQ=
+  - secure: tWZXuro9rE2knZkmIrrSFNsz7imUp69xMxTPFtR5PTW+1OTKuGnM4UJRSoYNnMtOGM2flkcjIsFpYrZNC8uQrbDvndZgyMRMQZQk2ixYpJht3DFjG/O4zxconYLok7TvsFyEVDYPp/tD5s8wVvRG0bDmlAvvq0P5Z8dQDx0TMPSQe682G15wVRMql9UVbuur+BcIsEuqruOVBolWvezG27Igi1qaYYbrxhqPuNV0swXbrHsutXUigP4O9yF5b6OKjj4NRDt17k248SC5K5fS61hIdjz99rUwQVagkq7n8V9NWcQqPqW9/kU3xXuJVSBGruKSQfAq9sJRwkFGUZBDv6Xi2XLZVlU+1oxq1/n9kxDH9MghzTeLHJg8xWywZ5ijhfPkcTybacaKoxsSyC9LOUPBdF/HmDCQNPlU4kfXSyeGPYN7hXaYsKRHlTs8/Kh2qdJghHICQ4GGY5xVJ9VrSpDHjEntO4Qmry48+7wkwPEixM+xeqTxkPflDSK9PBQ8CnBm1DrI8naYLf7C9OehX5UcfHRVuJJSPFzvdgU0m93TQKzX0BQl74mnY71nrsx2Y3UMM9e6esdBsIDvhJKNHcpulyMJTuXPRqEeedwpwCutgfSGQd3mzXaP8WuVdzkMt4LGGK7RKFubiYkdPd8h8w42fTPPlQ3UeZQdt4mpapQ=
+
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y ncftp
-
+- sudo apt-get -qq update
+- sudo apt-get install -y ncftp
 install:
-  - npm install
-
+- npm install
 script:
-  - npm run bower_install
-  - npm run lint
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - xvfb-run npm run test
-  - npm run build
-
-
+- npm run bower_install
+- npm run lint
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- npm run test
+- npm run build
 after_success:
-  - ./deploy.sh
-  - npm run lh $GOOGIEHOST_HOST
+- "./deploy.sh"
+- npm run lh $GOOGIEHOST_HOST

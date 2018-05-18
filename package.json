@@ -13,7 +13,7 @@
     "bower_install": "bower install",
     "lint": "npm run lint:javascript && polymer lint",
     "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
-    "test": "polymer test",
+    "test": "polymer test --skip-plugin local",
     "build": "polymer build",
     "lh": "lighthouse-ci --score=96 --runner=wpt"
   }
