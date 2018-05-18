@@ -14,27 +14,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>my-view1</title>
+    <title>previous-events</title>
 
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../bower_components/web-component-tester/browser.js"></script>
 
     <!-- Import the element to test -->
-    <link rel="import" href="../src/my-view1.html">
+    <link rel="import" href="../src/previous-events.html">
   </head>
   <body>
     <test-fixture id="BasicView">
       <template>
-        <my-view1></my-view1>
+        <previous-events></previous-events>
       </template>
     </test-fixture>
 
     <script>
-      suite('my-view1 tests', function() {
-        test('Number in circle should be 1', function() {
-          var myView = fixture('BasicView');
-          var circle = myView.shadowRoot.querySelector('.circle');
-          assert.equal(circle.textContent, '1');
+      suite('previous-events tests', function() {
+        test('Text for header should be previous events', function() {
+          var previousEvents = fixture('BasicView');
+          var header = previousEvents.shadowRoot.querySelector('h1');
+          assert.equal(header.textContent, 'Previous Events');
         });
       });
     </script>

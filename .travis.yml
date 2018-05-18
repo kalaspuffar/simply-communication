@@ -11,13 +11,12 @@ before_install:
 install:
   - npm install
 
-script:  
-#  - npm run lint
-#  - npm run lint:javascript
-#  - npm run test
+script:
+  - npm run lint
+  - npm run test
   - npm run bower_install
   - npm run build
-  
+
 after_success:
   - ./deploy.sh
   - npm run lh $GOOGIEHOST_HOST
