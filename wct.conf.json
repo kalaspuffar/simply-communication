@@ -1,6 +1,6 @@
 {
     "plugins": {
-        "sause": {
+        "sauce": {
             "browsers": [
                 {
                     "browserName": "chrome",
