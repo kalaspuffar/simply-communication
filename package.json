@@ -2,14 +2,19 @@
   "name": "polymer-starter-kit",
   "license": "BSD-3-Clause",
   "devDependencies": {
+    "bower": "^1.8.4",
     "eslint": "^3.19.0",
     "eslint-config-google": "^0.7.0",
-    "eslint-plugin-html": "^2.0.0"
+    "eslint-plugin-html": "^2.0.0",
+    "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
+    "polymer-cli": "^1.7.2"
   },
   "scripts": {
+    "bower_install": "bower install",
     "lint": "npm run lint:javascript && polymer lint",
     "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
-    "test": "polymer test",
-    "test:integration": "polymer build # test that psk builds without error with the CLI"
+    "test": "polymer test --skip-plugin local",
+    "build": "polymer build",
+    "lh": "lighthouse-ci --score=96 --runner=wpt"
   }
 }

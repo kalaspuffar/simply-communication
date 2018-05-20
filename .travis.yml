@@ -1,0 +1,23 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+- '9'
+addons:
+  chrome: stable
+
+before_install:
+- sudo apt-get -qq update
+- sudo apt-get install -y ncftp
+install:
+- npm install
+script:
+- npm run bower_install
+- npm run lint
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- npm run test
+- npm run build
+after_success:
+- "./deploy.sh"
+- npm run lh $GOOGIEHOST_HOST
